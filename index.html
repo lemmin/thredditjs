@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ThreaditJS: AgletJS</title>
+	<link rel="stylesheet" href="http://threaditjs.com/reset.css"/>
+	<link rel="stylesheet" href="http://threaditjs.com/shared.css"/>
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+	<script src="http://threaditjs.com/shared.js"></script>
+	<script src="aglet.js"></script>
+	<script src="app.js"></script>
+	<style>
+	.thread-list div {
+		padding-left:20px;
+	}
+	.error {
+		color:#FFF;
+		opacity:0;
+		position:fixed;
+		top:10%;
+		width:70%;
+		padding:8px;
+		margin:0 auto;
+		left:0;
+		right:0;
+		background-color:#C99;
+		border:2px solid #A77;
+		border-radius:5px;
+		display:none;
+		animation: messaging 4s;
+	}
+	.loading {
+		width:100px;
+		height:100px;
+		position:fixed;
+		top:10%;
+		right:10%;
+
+		border-radius:100%;
+		border-left:8px solid #99C;
+		animation: loading 1s linear infinite;
+	}
+
+	@keyframes loading {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	@keyframes messaging {
+		10% {
+			opacity:.8;
+		}
+		90% {
+			opacity:.8;
+		}
+		100% {
+			opacity:0;
+		}
+	}
+	</style>
+</head>
+<body>
+	<h3 ag-name="messaging" class="error"></h3>
+	<p class="head_links">
+		<a href="#">Source</a> | <a href="http://threaditjs.com">ThreaditJS Home</a>
+	</p>
+	<h2><a href="#">ThreaditJS: AgletJS</a></h2>
+	<div class="main">
+		<div class="thread-list" ag-name="threadlist"></div>
+	</div>
+	<div ag-name="loading" class="loading"></div>
+</body>
+</html>
